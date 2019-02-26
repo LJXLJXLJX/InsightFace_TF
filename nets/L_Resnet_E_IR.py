@@ -26,7 +26,7 @@ class ElementwiseLayer(Layer):
         name ='elementwise_layer',
         act = None,
     ):
-        Layer.__init__(self, name=name)
+        Layer.__init__(self, name=name,prev_layer=None)
 
         if act:
             print("  [TL] ElementwiseLayer %s: size:%s fn:%s, act:%s" % (
@@ -107,7 +107,7 @@ class BatchNormLayer(Layer):
             trainable=None,
             name='batchnorm_layer',
     ):
-        Layer.__init__(self, name=name)
+        Layer.__init__(self, name=name,prev_layer=None)
         self.inputs = layer.outputs
         print("  [TL] BatchNormLayer %s: decay:%f epsilon:%f act:%s is_train:%s" % (self.name, decay, epsilon, act.__name__, is_train))
         x_shape = self.inputs.get_shape()

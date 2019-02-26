@@ -30,7 +30,6 @@ from sklearn.decomposition import PCA
 import sklearn
 from scipy import interpolate
 import datetime
-import mxnet as mx
 
 
 def calculate_roc(thresholds, embeddings1, embeddings2, actual_issame, nrof_folds=10, pca=0):
